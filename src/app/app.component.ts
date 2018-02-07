@@ -16,6 +16,17 @@ const HEROES: Hero[] = [
 
 @Component({
   selector: 'app-root',
+  template: `
+<h1>{{title}}</h1>
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes" [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
+<hero-detail [hero]="selectedHero"></hero-detail>
+`
+  ,
   styles: [`
   .selected {
     background-color: #CFD8DC !important;
@@ -64,17 +75,8 @@ const HEROES: Hero[] = [
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
   }
-`],
-  template: `
-<h1>{{title}}</h1>
-<h2>My Heroes</h2>
-<ul class="heroes">
-  <li *ngFor="let hero of heroes" [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
-    <span class="badge">{{hero.id}}</span> {{hero.name}}
-  </li>
-</ul>
-<hero-detail [hero]="selectedHero"></hero-detail>
-`
+`]
+
 })
 export class AppComponent {
   title = 'Tour of Heroes';
