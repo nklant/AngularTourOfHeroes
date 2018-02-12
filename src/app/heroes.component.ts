@@ -3,6 +3,7 @@ import { Hero } from './hero';
 import { HeroService } from './hero.service';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'my-heroes',
   template: `
 <h2>My Heroes</h2>
@@ -74,9 +75,9 @@ export class HeroesComponent implements OnInit {
     this.heroService.getHeroes().then(heroes => this.heroes = heroes);
   }
 
-  //getHeroes(): void {
-  //  this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes); // Get heroes simulating slow connection 2 seconds
-  //}
+  // getHeroes(): void {
+  // this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes); // Get heroes simulating slow connection 2 seconds
+  // }
 
   ngOnInit(): void {
     this.getHeroes();
