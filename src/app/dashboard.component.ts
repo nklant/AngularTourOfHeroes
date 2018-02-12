@@ -7,6 +7,7 @@ import { HeroService } from './hero.service';
   // tslint:disable-next-line:component-selector
   selector: 'my-dashboard',
   templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
 })
 
 export class DashboardComponent implements OnInit {
